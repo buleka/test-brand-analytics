@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../fonts/Unbounded-Regular.woff2') format('woff2'), url('../fonts/Unbounded-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Unbounded Bold';
+  src: url('../fonts/Unbounded-Bold.woff2') format('woff2'), url('../fonts/Unbounded-Bold.woff') format('woff');
+  //font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Unbounded ExtraBold';
+  src: url('../fonts/Unbounded-ExtraBold.eot');
+  src: url('../fonts/Unbounded-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Unbounded-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Unbounded-ExtraBold.woff') format('woff'),
+  url('../fonts/Unbounded-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.eot');
+  src: local('Raleway'), local('Raleway-Regular'),
+  url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Raleway-Regular.woff') format('woff'),
+  url('../fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway Semi Bold';
+  src: url('../fonts/Raleway-SemiBold.eot');
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'),
+  url('../fonts/Raleway-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Raleway-SemiBold.woff') format('woff'),
+  url('../fonts/Raleway-SemiBold.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway Extra Bold';
+  src: url('../fonts/Raleway-ExtraBold.eot');
+  src: url('../fonts/Raleway-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Raleway-ExtraBold.woff') format('woff'),
+  url('../fonts/Raleway-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

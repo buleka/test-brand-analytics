@@ -1,0 +1,362 @@
+@use './base.scss';
+
+
+.tickets {
+  position: relative;
+  max-width: 925px;
+  width: 100%;
+}
+
+.ticket {
+  width: 100%;
+  height: 230px;
+  box-sizing: border-box;
+
+  background-image: url('../images/ticket.svg');
+  border-radius: 18.14px;
+  box-shadow: 0px 10px 40px 0px rgba(14, 14, 16, 0.20);
+  background-position: -41px -30px;
+  background-repeat: no-repeat;
+
+  display: flex;
+  gap: 4px;
+
+  color: base.$black;
+
+  padding: 31px 43px 31px 80.64px;
+  position: relative;
+  z-index: 3;
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 218px;
+    background-color: rgba(base.$green, 0.8);
+    top: 6px;
+    left: 6px;
+    border-radius: 15px 0 0 15px;
+    @include base.min-width(mobile) {
+      display: none;
+    }
+  }
+
+
+  &-2 {
+    z-index: 2;
+    transform: translate3d(0, 0, 0) scale(0.89);
+    filter: brightness(0.63);
+
+    @include base.min-width(mobile) {
+      .ticket__title {
+        font-size: 20px;
+      }
+
+      transform: translate3d(0, -90%, 0) scale(0.89);
+
+    }
+
+    &:before {
+      background-color: base.$orange;
+    }
+
+  }
+
+  &-3 {
+    z-index: 1;
+    transform: translate3d(0, 0, 0) scale(0.78);
+    filter: brightness(0.257);
+    top: -25px;
+
+    &:before {
+      background-color: base.$pink;
+    }
+
+    //XXX
+
+    .ticket__title {
+      font-size: 31px;
+    }
+
+    //XXX
+    @include base.min-width(mobile) {
+      .ticket__title {
+        font-size: 20px;
+      }
+
+      transform: translate3d(0, -170%, 0) scale(0.78);
+    }
+  }
+
+  @include base.min-width(small) {
+    background-color: #FAFBFF;
+    background-image: none;
+  }
+
+
+  @include base.min-width(mobile) {
+
+    background-image: url('../images/ticket-mobile.svg');
+    background-color: #FAFBFF;
+    background-position: 102% center;
+
+    height: auto;
+
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+
+    padding: 27px 25px;
+    border-radius: 26px;
+
+  }
+
+}
+
+.ticket-left {
+  flex-basis: 71.3%;
+  box-sizing: border-box;
+  position: relative;
+
+
+  &:after {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    background-image: radial-gradient(circle, #D9D9D9 2px, transparent 0);
+    background-repeat: repeat-y;
+    background-size: 100% 10px;
+
+    @include base.min-width(mobile) {
+      display: none;
+    }
+  }
+
+}
+
+.ticket-right {
+  box-sizing: border-box;
+  flex: 1;
+  padding-left: 37px;
+
+  @include base.min-width(mobile) {
+    padding-left: 0;
+    display: grid;
+    grid-template-areas: 'a b b b'
+                          'c c c c';
+    grid-row-gap: 16px;
+  }
+}
+
+.ticket__title {
+  font-family: 'Unbounded ExtraBold';
+
+  font-size: 34px;
+  line-height: 117.647%;
+  margin-bottom: 31px;
+  margin-top: 15.9px;
+
+  @include base.min-width(small) {
+    font-size: 20px;
+  }
+
+  @include base.min-width(mobile) {
+    letter-spacing: 0.34px;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    line-height: 120%; /* 40.8px */
+  }
+
+  &--bold {
+    margin-top: 19px;
+    margin-bottom: 35px;
+
+    &:first-child{
+      margin-top: 41px;
+    }
+
+    @include base.min-width(mobile) {
+      margin: 0;
+      text-align: right;
+      grid-area: b;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.ticket__button {
+
+  @include base.font-Raleway-SemiBold;
+
+  display: flex;
+  //width: 189px;
+  height: 42px;
+  padding: 13.316px 16.645px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: base.$green;
+
+  color: base.$black;
+
+  font-size: 13px;
+  //font-weight: 600;
+  line-height: 13px; /* 100% */
+  text-transform: uppercase;
+  box-sizing: border-box;
+
+  &--disabled {
+    background: transparent;
+    border-radius: 6px;
+    border: 0.755px solid rgba(14, 14, 16, 0.50);
+    white-space: nowrap;
+  }
+
+
+  @include base.min-width(mobile) {
+    grid-area: c;
+
+
+    display: flex;
+    height: 47px;
+    padding: 13.316px 16.645px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+
+    font-size: 14px;
+    line-height: 19.974px; /* 142.673% */
+
+  }
+}
+
+.ticket__price {
+  @include base.font-Raleway-SemiBold;
+  color: base.$grey-darK;
+  font-size: 18px;
+  //font-weight: 600;
+  line-height: 99.462%; /* 17.903px */
+  text-decoration-line: line-through;
+  margin-top: 4px;
+
+  @include base.min-width(mobile) {
+    grid-area: a;
+    margin: 0;
+
+    padding-top: 5px;
+    font-size: 16px;
+    line-height: 99.462%; /* 15.914px */
+  }
+}
+
+.ticket__grid {
+  display: flex;
+  gap: 89.24px;
+  @include base.min-width(mobile) {
+    padding-right: 0;
+  }
+}
+
+.ticket__list {
+  display: flex;
+  gap: 7.17px;
+}
+
+.ticket__list-item {
+  color: base.$black;
+  @include base.font-Raleway-SemiBold;
+  font-size: 12.548px;
+  line-height: 17.903px; /* 142.673% */
+
+  display: flex;
+  box-sizing: border-box;
+  min-width: 111.143px;
+  height: 25.097px;
+  padding: 3.585px 8.067px;
+  justify-content: center;
+  align-items: center;
+  gap: 8.963px;
+  flex-shrink: 0;
+
+  border-radius: 6px;
+  background: base.$green;
+
+
+  @include base.min-width(mobile) {
+    color: rgba(base.$black, 0.90);
+    font-size: 13px;
+    line-height: 20px; /* 153.846% */
+    height: 28px;
+  }
+
+  &--orange{
+    background: base.$orange;
+  }
+
+  &--pink{
+    background: base.$pink;
+  }
+
+  &--grey{
+    background: base.$grey;
+    @include base.min-width(mobile) {
+      display: none;
+    }
+  }
+}
+
+.ticket__data {
+  @include base.font-Raleway-extrabold;
+  font-size: 12px;
+  line-height: 124.328%; /* 14.919px */
+  margin-bottom: 4px;
+
+  @include base.min-width(mobile) {
+    display: none;
+  }
+}
+
+.ticket__address {
+  @include base.font-Raleway-SemiBold;
+
+  font-size: 9.859px;
+  line-height: 136.364%;
+  max-width: 180px;
+
+  @include base.min-width(mobile) {
+    color: rgba(base.$black, 0.90);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    max-width: none;
+  }
+}
+
+.ticket__barcode {
+  @include base.min-width(mobile) {
+    display: none;
+  }
+}
+
+.ticket__barcode-caption {
+  @include base.font-Raleway-SemiBold;
+  font-size: 7.817px;
+  line-height: 100%; /* 7.817px */
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4.77px;
+}
+
+.ticket__barcode-img {
+  display: block;
+  width: 162.114px;
+  height: 42.802px;
+}
