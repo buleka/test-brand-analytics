@@ -63,9 +63,17 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
+.mobile-hidden{
   @include base.min-width(mobile){
-    padding-top: 40px;
-    height: 100%;
+    display: none;
+  }
+}
+
+.desktop-hidden{
+  display: none;
+  @include base.min-width(mobile){
+    display: block;
   }
 }
