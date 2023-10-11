@@ -56,10 +56,10 @@ module.exports = {
 
         new HtmlWebpackInjectPreload({
             files: [
-                {
-                    match: /.*\.woff2$/,
-                    attributes: {as: "font", type: "font/woff2", crossorigin: true},
-                },
+                // {
+                //     match: /.*\.woff2$/,
+                //     attributes: {as: "font", type: "font/woff2", crossorigin: true},
+                // },
                 {
                     match: /vendors\.[a-z-0-9]*.css$/,
                     attributes: {as: "style"},
@@ -85,11 +85,11 @@ module.exports = {
                 filename: "[name].[contenthash].css",
             }
         ),
-        new CompressionPlugin({
-            algorithm: "gzip",
-            threshold: 10240,
-            minRatio: 0.8
-        }),
+        // new CompressionPlugin({
+        //     algorithm: "gzip",
+        //     threshold: 10240,
+        //     minRatio: 0.8
+        // }),
 
     ],
     module: {
@@ -98,7 +98,7 @@ module.exports = {
                 test: /\.(ttf|eot|woff|woff2)$/,
                 type: "asset/resource",
                 generator: {
-                    filename: path.join("fonts", "[name].[contenthash][ext]"),
+                    filename: path.join("fonts", "[name][ext]"),
                 }
             },
             {
